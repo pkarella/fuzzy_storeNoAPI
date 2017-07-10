@@ -15,11 +15,8 @@
 <br>
 <%= link_to "Products", products_path %>
 <hr>
-<% if @products.any? %>
-  <% @products.each do |prod| %>
-    <h3><%= prod.name %>,</h3>
-    <p><%= prod.description %></p>
-  <% end %>
-<% else %>
-  <h2>No products currently listed.</h2>
+
+<% @books['results']['books'].each do |item| %>
+<li><%= item['title'] %></li>
 <% end %>
+<%=link_to 'Click here to see the news', home_index_path, :action => 'get_books' %>
