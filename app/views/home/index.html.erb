@@ -1,0 +1,25 @@
+<h2>this is the redirected page</h2>
+
+<% if current_user %>
+
+  <%= link_to('Edit registration', edit_user_registration_path) %>
+  <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
+
+<% else %>
+
+  <%= link_to('Register', new_user_registration_path)  %>
+  <%= link_to('Login', new_user_session_path)  %>
+
+<% end %>
+
+<br>
+<%= link_to "Products", products_path %>
+<hr>
+<% if @products.any? %>
+  <% @products.each do |prod| %>
+    <h3><%= prod.name %>,</h3>
+    <p><%= prod.description %></p>
+  <% end %>
+<% else %>
+  <h2>No products currently listed.</h2>
+<% end %>
