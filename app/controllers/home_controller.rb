@@ -4,11 +4,9 @@ class HomeController < ApplicationController
   def index
     @products = Product.all
 
-    @books = JSON.parse(RestClient::Request.execute(method: :get, url: 'https://api.nytimes.com/svc/books/v3/lists/combined-print-and-e-book-fiction.json', headers: {api_key:  '3930eed521a2437c957c7768a7b5969e'}))
+    # @books = JSON.parse(RestClient::Request.execute(method: :get, url: 'https://api.nytimes.com/svc/books/v3/lists/combined-print-and-e-book-fiction.json', headers: {api_key:  '3930eed521a2437c957c7768a7b5969e'}))
 
   end
 
-  def get_books
-
-end
+  
 end

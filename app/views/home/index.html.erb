@@ -15,8 +15,3 @@
 <br>
 <%= link_to "Products", products_path %>
 <hr>
-
-<% @books['results']['books'].each do |item| %>
-<li><%= item['title'] %></li>
-<% end %>
-<%=link_to 'Click here to see the news', home_index_path, :action => 'get_books' %>
