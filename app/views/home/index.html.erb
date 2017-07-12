@@ -1,17 +1,7 @@
-<h2>this is the redirected page</h2>
 
-<% if current_user %>
-
-  <%= link_to('Edit registration', edit_user_registration_path) %>
-  <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>
-
-<% else %>
-
-  <%= link_to('Register', new_user_registration_path)  %>
-  <%= link_to('Login', new_user_session_path)  %>
-
-<% end %>
-
-<br>
-<%= link_to "Products", products_path %>
-<hr>
+<div class="home">
+  <h1>Home Page</h1>
+  <p>
+    Some stuff about the fuzzy felties. probably divide and have featured products? maybe twitter imbed.
+  </p>
+</div>

@@ -1,2 +1,29 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+.splash {
+  background-image: url(all-felties.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 1000px;
+}
+
+#splash-nav {
+    background-color: white;
+    width: 80%;
+    text-align: center;
+    margin: 100px;
+    li {
+      padding-left: 15px;
+      margin-right: 5%;
+      text-align: center;
+    }
+}
+.home {
+  border: 2px solid gray;
+  background-color: white;
+  min-height: 500px;
+  text-align: center;
+  margin: 20%;
+  padding: 5%;
+}

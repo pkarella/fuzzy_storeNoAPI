@@ -1,4 +1,8 @@
-<h1>Welcome!</h1>
-<h2><%= link_to "Sign In",  new_user_session_path %></h2>
-<h2><%= link_to "Sign Up",  new_user_registration_path %></h2>
-<h2><%= link_to "Browse as Guest", home_index_path %></h2>
+<div class="splash">
+  <ul class="nav navbar-nav navbar-left" id="splash-nav">
+      <li><h2><%= link_to "Sign In",  new_user_session_path %></h2></li>
+      <li><h2><%= link_to "Sign Up",  new_user_registration_path %></h2></li>
+      <li><h1>Welcome!</h1></li>
+      <li><h2><%= link_to "Browse as Guest", home_index_path %></h2></li>
+  </ul>
+</div>
