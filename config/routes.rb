@@ -5,10 +5,13 @@ Rails.application.routes.draw do
   root "home#splash"
 
   get '/cart/complete' => 'carts#order_complete', as: 'complete'
-  
+
   resources :home, :only => [:splash, :index]
   resources :users
-  resources :products
+  resources :products do
+    resources :reviews
+  end
+
   resources :orders
   resources :order_items
   resource :cart, only: [:show]

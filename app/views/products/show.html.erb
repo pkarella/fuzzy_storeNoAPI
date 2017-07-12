@@ -1,0 +1,29 @@
+<h1><%= @product.name %></h1>
+<div class="well">
+  <% if @product.photos.any? %>
+    <% @product.photos.each do |pic| %>
+    <%= image_tag(pic) %>
+    <% end %>
+  <% end %>
+  <p>
+    <%= @product.description %>
+  </p>
+
+</div>
+
+<% if @product.reviews.any? %>
+  <% @product.reviews.each do |prod| %>
+    <div class="well">
+      <% if prod.photos.any? %>
+        <% prod.photos.each do |pic| %>
+        <%= image_tag(pic.image) %>
+        <% end %>
+      <% end %>
+    <p>
+      <%= prod.content %>
+    </p>
+
+    <h6>By: <%= prod.author %></h6>
+    </div>
+  <% end %>
+<% end %>
