@@ -1,0 +1,21 @@
+<h2>Thanks, you paid <strong><%= number_to_currency current_order.total_price %></strong>!</h2>
+<%= link_to 'Home', home_path %>
+
+<!-- <%= form_tag charges_path do %>
+  <article>
+    <% if flash[:error].present? %>
+      <div id="error_explanation">
+        <p><%= flash[:error] %></p>
+      </div>
+    <% end %>
+    <label class="amount">
+      <span><%= number_to_currency current_order.total_price %></span>
+    </label>
+  </article>
+
+  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+          data-description="Your order:"
+          data-amount= <%= current_order.total_price %>
+          data-locale="auto"></script>
+<% end %> -->

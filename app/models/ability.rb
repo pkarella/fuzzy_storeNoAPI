@@ -10,9 +10,7 @@ if user.admin?
     can :access, :rails_admin       # only allow admin users to access Rails Admin
     can :dashboard                  # allow access to dashboard
 end
-if user.admin?
-    can :manage, User
-end
+
     #
     # The first argument to `can` is the action you are giving the user
     # permission to do.

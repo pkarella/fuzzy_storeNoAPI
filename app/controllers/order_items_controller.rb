@@ -5,6 +5,7 @@ class OrderItemsController < ApplicationController
     @item = @order.order_items.new(item_params)
     @order.save
     session[:order_id] = @order.id
+    session[:temporary_shopping_cart] << @order
     redirect_to products_path
   end
 
@@ -15,7 +16,7 @@ class OrderItemsController < ApplicationController
     @order.save
     redirect_to cart_path
   end
-  
+
   private
 
   def item_params
