@@ -12,29 +12,48 @@
 <br>
 <br>
 <% if current_user && @user_purchase.include?(@product) %>
-<li><%= link_to "Leave a review for this product", new_product_review_path(@product.id), id: "new_link", remote: true %></li>
+<p><%= link_to "Add a Review", new_product_review_path(@product), id: "new_link", remote: true %></p>
 <% end %>
 
 <br>
 <br>
 
-<div id="reviews">
 
-    <% if @reviews %>
-      <% @reviews.each do |review| %>
-        <div class="well">
-          <% if review.photos.any? %>
-            <% review.photos.each do |pic| %>
-            <%= image_tag(pic.image(:medium)) %>
-            <% end %>
-          <% end %>
-        <p>
-          <%= review.content %>
-        </p>
+<% if @reviews %>
+     <% @reviews.each do |review| %>
+       <div class="well">
+         <% if review.photos.any? %>
+           <% review.photos.each do |pic| %>
+           <%= image_tag(pic.image(:medium)) %>
+           <% end %>
+         <% end %>
+       <p>
+         <%= review.content %>
+       </p>
 
-        <h6>By: <%= review.author %></h6>
-        </div>
-       <% end %>
-    <% end %>
-  
-</div>
+       <h6>By: <%= review.author %></h6>
+       </div>
+      <% end %>
+   <% end %>
+
+
+
+
+
+
+
+
+
+
+<!-- <% if @product.reviews.any? %>
+  <h4>Here are the reviews for this product:</h4>
+
+  <ul>
+    <% @product.reviews.each do |review| %>
+      <li><%= review.author %> <%= review.content %><%= review.rating %></li>
+        <% end %>
+
+  </ul>
+<% else %>
+  <p>There are no reviews yet!</p>
+<% end %> -->

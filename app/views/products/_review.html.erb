@@ -2,7 +2,7 @@
 
 
       <div class="well">
-        <% if self.photos.any? %>
+        <% if photos.any? %>
           <% photos.each do |pic| %>
           <%= image_tag(pic.image(:medium)) %>
           <% end %>
