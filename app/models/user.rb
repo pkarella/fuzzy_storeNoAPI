@@ -6,9 +6,20 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
 
  after_create :register_account
- def register_account
+   def register_account
      @user = User.last
      @account = Account.create!(user_id: @user.id)
    end
 
+   def bought
+     @purchased = []
+     if self.account.orders.any?
+       self.account.orders.each do |order|
+         order.order_items.each do |item|
+           @purchased.push(item.product)
+         end
+       end
+     end
+     @purchased
+   end
 end

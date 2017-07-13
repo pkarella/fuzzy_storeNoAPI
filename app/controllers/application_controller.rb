@@ -23,7 +23,7 @@ class ApplicationController < ActionController::Base
       Order.find(session[:order_id])
     elsif current_user && Order.in_progress(current_user)[0]
       Order.in_progress(current_user)[0]
-    else
+    elsif current_user
       Order.new(account_id: current_user.account.id )
     end
   end

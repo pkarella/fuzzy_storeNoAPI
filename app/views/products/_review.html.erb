@@ -1,0 +1,15 @@
+
+
+
+      <div class="well">
+        <% if self.photos.any? %>
+          <% photos.each do |pic| %>
+          <%= image_tag(pic.image(:medium)) %>
+          <% end %>
+        <% end %>
+      <p>
+        <%= content %>
+      </p>
+
+      <h6>By: <%= author %></h6>
+      </div>

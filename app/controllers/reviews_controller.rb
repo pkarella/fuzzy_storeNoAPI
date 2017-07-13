@@ -15,16 +15,20 @@ class ReviewsController < ApplicationController
     @photo = Photo.new(:image => img)
     @user = current_user
     @product = Product.find(params[:product_id])
-    @review = Review.new(:content => review_content, :rating => rating, :author => author)
+    @review = Review.new(:content => review_content, :rating => rating, :author => author, :product_id => id_for_join)
     @review.save
     @review.photos.push(@photo)
     @product.reviews.push(@review)
     if @review.save
       flash[:notice] = "Product successfully added!"
-      redirect_to product_path(@product)
+      respond_to do |format|
+        format.html { redirect_to product_path(@product) }
+        format.js
+      end
     else
       redirect_to product_path(@product)
     end
+    
   end
 
 
