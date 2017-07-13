@@ -21,16 +21,22 @@ class ReviewsController < ApplicationController
     @product.reviews.push(@review)
     if @review.save
       flash[:notice] = "Product successfully added!"
-  respond_to do |f|
-    f.html { redirect_to product_path(@review.product) }
-    f.js
-  end
-
+      respond_to do |f|
+        f.html { redirect_to product_path(@review.product) }
+        f.js
+      end
     else
       redirect_to product_path(@product)
     end
-
   end
 
+  def destroy
+  
+    @review = Review.destroy(params[:id])
+    respond_to do |format|
+      format.html { redirect_to product_path(@review.product) }
+      format.js
+    end
+  end
 
 end

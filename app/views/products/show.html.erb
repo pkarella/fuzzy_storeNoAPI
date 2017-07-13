@@ -26,7 +26,7 @@
   <% if @reviews %>
        <% @reviews.each do |review| %>
 
-         <div class="well">
+         <div id="testtwo<%= review.id %>" class="well">
            <% if review.photos.any? %>
              <% review.photos.each do |pic| %>
              <%= image_tag(pic.image(:medium)) %>
@@ -37,9 +37,12 @@
          </p>
 
          <h6>By: <%= review.author %></h6>
+        <%= link_to "(remove)", product_review_path(@product, review),  data: {:confirm => "Are you sure?", :method=>"delete"}, remote: true %>
          </div>
+
          <% end %>
-     <% end %>
+
+  <% end %>
 
 
      <div id="test">
