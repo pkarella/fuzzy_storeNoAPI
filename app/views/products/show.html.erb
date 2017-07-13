@@ -19,27 +19,32 @@
 <br>
 
 
-<% if @reviews %>
-     <% @reviews.each do |review| %>
-       <div class="well">
-         <% if review.photos.any? %>
-           <% review.photos.each do |pic| %>
-           <%= image_tag(pic.image(:medium)) %>
+
+
+
+
+  <% if @reviews %>
+       <% @reviews.each do |review| %>
+
+         <div class="well">
+           <% if review.photos.any? %>
+             <% review.photos.each do |pic| %>
+             <%= image_tag(pic.image(:medium)) %>
+             <% end %>
            <% end %>
+         <p>
+           <%= review.content %>
+         </p>
+
+         <h6>By: <%= review.author %></h6>
+         </div>
          <% end %>
-       <p>
-         <%= review.content %>
-       </p>
-
-       <h6>By: <%= review.author %></h6>
-       </div>
-      <% end %>
-   <% end %>
+     <% end %>
 
 
+     <div id="test">
 
-
-
+     </div>
 
 
 
